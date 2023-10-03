@@ -95,4 +95,48 @@ console.log("El promedio es: ", promedio);
 
 console.log(arrayNumeros2.indexOf(20));
 
+var array = new Array(10000000);
+console.time("Loop no optimo");
+
+for (var i = 0; i < array.length; i++) {
+  array[i] = i;
+}
+console.timeEnd("Loop no optimo");
+
+
+console.time("Loop optimo");
+var length = array.length;
+for (var i = 0; i < length; i++) {
+  array[i] = i;
+}
+console.timeEnd("Loop optimo");
+
+
+console.time("Loop optimo 2");
+for (const i of array) {
+    array[i] = i;
+    }
+console.timeEnd("Loop optimo 2");
+
+const abecedario = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+
+//for of
+
+for (const letra of abecedario) {
+  console.log(letra);
+}
+
+
+Object.seal(objManzana);
+
+objManzana.name = "manzana verde";
+
+console.log(objManzana);
+
+
+
+
+
+
+
 
